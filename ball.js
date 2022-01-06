@@ -12,7 +12,7 @@ export default class Ball {
     set x(value) {
         this.ballElement.style.setProperty("--x", value)
     }
-    
+
     get y() {
         return parseFloat(getComputedStyle(this.ballElement).getPropertyValue("--y"))
     }
@@ -23,6 +23,7 @@ export default class Ball {
 
     //we call this method in the script frame
     update(delta) {
-        this.x = 5
+        this.x = 25
+        this.y = 15
     }
 }

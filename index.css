@@ -18,7 +18,7 @@ body {
 
     position: absolute;
     top: calc(var(--position) * 1vh);
-    transform: translateY(-50%);
+    transform: translateY(-50%, -50%);
     width: 1vw;
     height: 10vh;
     background-color: var(--background-color);
@@ -36,15 +36,15 @@ body {
 
 .ball {
 
-    --x : 50;
+    --x: 50;
     --y: 50;
 
     position: absolute;
     top: calc(var(--y) * 1vh);
     left: calc(var(--x) * 1vw);
-    transform: translateY(-50%);
-    width: 1.5rem;
-    height: 1.5rem;
+    transform: translateY(-50%, -50%);
+    width: 2.5vh;
+    height: 2.5vh;
     border-radius: 50%;
     background-color: white;
 }
