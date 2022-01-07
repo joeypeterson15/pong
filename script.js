@@ -4,6 +4,8 @@ import Paddle from './Paddle.js'
 const ball = new Ball(document.getElementById('ball'))
 const computerPaddle = new Paddle(document.getElementById('computerPaddle'))
 const playerPaddle = new Paddle(document.getElementById('playerPaddle'))
+const computerScore = document.getElementById('computer-score')
+const playerScore = document.getElementById('player-score')
 
 let lastTime
 
@@ -21,15 +23,26 @@ export function update (time) {
     }
 
     const rect = ball.rect()
+
     if  (rect.left <= 0 || rect.right >= window.innerWidth) {
+        handleLose()
           ball.reset()
           computerPaddle.reset()
         }
 
-
+    //getting the time
     lastTime = time
 
     window.requestAnimationFrame(update)
+}
+
+function handleLose () {
+    const rect = ball.rect()
+    if (rect.left <= 0) {
+        playerScore.innerText = parseFloat((playerPaddle.innerText) + 1)
+    } else {
+        computerScore.innerText =parseFloat((computerScore.innerText) + 1)
+    }
 }
 
 window.addEventListener('mousemove', e => {
