@@ -39,9 +39,9 @@ export function update (time) {
 function handleLose () {
     const rect = ball.rect()
     if (rect.left <= 0) {
-        playerScore.innerText = parseFloat((playerPaddle.innerText) + 1)
+        computerScore.textContent = parseFloat(computerScore.textContent) + 1
     } else {
-        computerScore.innerText =parseFloat((computerScore.innerText) + 1)
+        playerScore.textContent = parseFloat(playerScore.textContent) + 1
     }
 }
 
