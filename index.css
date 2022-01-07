@@ -4,6 +4,7 @@
 
 :root {
     --background-color: white;
+
 }
 
 body {
@@ -35,10 +36,8 @@ body {
 }
 
 .ball {
-
     --x: 50;
     --y: 50;
-
     position: absolute;
     top: calc(var(--y) * 1vh);
     left: calc(var(--x) * 1vw);
@@ -48,3 +47,24 @@ body {
     border-radius: 50%;
     background-color: white;
 }
+
+.score {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: var(--foreground-color);
+    }
+
+  .score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 2vh;
+    margin: 1vh 0;
+    opacity: .5;
+    }
+
+  .score > :first-child {
+    text-align: right;
+    border-right: .5vh solid var(--foreground-color);
+    }
